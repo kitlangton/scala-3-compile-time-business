@@ -1,0 +1,11 @@
+.bloop
+.bsp
+.idea
+.metals
+.vscode
+project/project
+project/target
+project/metals.sbt
+src/main/scala/lab/pages/.DS_Store
+src/main/scala/lab/.DS_Store
+target
