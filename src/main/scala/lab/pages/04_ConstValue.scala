@@ -12,6 +12,5 @@ def constValueExample =
   // String, Int, Boolean
   // val number: 12 = 12
   // val b: true    = true
-  val x: 12  = 12
-  val result = constValue[x.type]
+  val result = constValue[11]
   println(result.toString.red)

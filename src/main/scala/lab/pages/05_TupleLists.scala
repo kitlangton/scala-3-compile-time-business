@@ -23,10 +23,16 @@ transparent inline def myConstValueTuple[T <: Tuple]: T = {
     case _: EmptyTuple => EmptyTuple
 }.asInstanceOf[T]
 
-// Mirror -> derive implementations of type classes
+def myConstValueTupleReal[T <: Tuple](tuple: T): T = {
+  tuple match
+    case (h *: t)   => h *: myConstValueTupleReal(t)
+    case EmptyTuple => EmptyTuple
+}.asInstanceOf[T]
 
-val res = constValueTuple[("hello", 1, true, 3.5)]
+// Mirror -> derive implementations of type classes
 
 @main
 def tupleExample =
-  println(res.toString.red)
+  val result   = debug(myConstValueTuple["hello" *: 12 *: EmptyTuple])
+  val recreate = myConstValueTupleReal(result)
+  println(recreate.toString.red)

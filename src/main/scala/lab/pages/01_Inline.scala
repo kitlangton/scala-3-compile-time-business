@@ -21,9 +21,9 @@ def doBusiness(strategy: String, kpis: Int) =
 
 @main
 def inlineExample =
-  debugInline {
+  debug {
     inlineBusiness("hello", 3)
   }
-  debugInline {
+  debug {
     doBusiness("hello", 3)
   }
